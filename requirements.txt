@@ -1,0 +1,23 @@
+# For name generation.
+faker==18.13.0
+
+# [code_style]-[BEGIN]
+# Pre-commit hook.
+pre-commit==3.3.3
+# Upgrade syntax.
+pyupgrade==3.9.0
+# Formatter. Apply codestyle.
+black==23.7.0
+# Check codestyle.
+flake8==6.0.0
+# Removes unused imports and unused variables.
+autoflake==2.2.0
+# [code_style]-[END]
+
+# For saving converted data.
+#ruamel.yaml==0.17.32
+
+# for API
+#requests==2.31.0
+
+#pandas==2.0.3
