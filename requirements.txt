@@ -13,11 +13,3 @@ flake8==6.0.0
 # Removes unused imports and unused variables.
 autoflake==2.2.0
 # [code_style]-[END]
-
-# For saving converted data.
-#ruamel.yaml==0.17.32
-
-# for API
-#requests==2.31.0
-
-#pandas==2.0.3
