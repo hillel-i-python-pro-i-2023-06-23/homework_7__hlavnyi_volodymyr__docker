@@ -63,16 +63,19 @@ def organize_data(humans: T_HUMANS):
 
 
 def get_formatted_output(data) -> str:
-    string_for_contencat = []
+    string_for_contencat: list[str] = []
     for group in data:
-        string_for_contencat.append("The group '")
-        string_for_contencat.append(f"{group}' ")
-        string_for_contencat.append("has ")
-        string_for_contencat.append(f"{len(data[group])} ")
-        string_for_contencat.append("items -> (")
-        string_for_contencat.append(", ".join(data[group]))
-        string_for_contencat.append(")\n")
-
+        string_for_contencat.extend(
+            (
+                "The group '",
+                f"{group}' ",
+                "has ",
+                f"{len(data[group])} ",
+                "items -> (",
+                ", ".join(data[group]),
+                ")\n",
+            )
+        )
     return "".join(string_for_contencat)
 
 
