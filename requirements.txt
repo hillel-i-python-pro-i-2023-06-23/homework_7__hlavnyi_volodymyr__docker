@@ -1,6 +1,7 @@
 # For name generation.
 faker==18.13.0
 
+
 # [code_style]-[BEGIN]
 # Pre-commit hook.
 pre-commit==3.3.3

@@ -22,11 +22,13 @@ d-run:
 	@COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 \
 		docker compose up --build
 
+
 .PHONY: d-stop
 # Stop services
 d-stop:
 	@COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 \
 		docker compose down
+
 
 .PHONY: d-purge
 # Purge all data related with services
@@ -41,6 +43,7 @@ init-dev:
 	@pip install --upgrade pip && \
 	pip install --requirement requirements.txt && \
 	pre-commit install
+
 
 .PHONY: homework-i-run
 # Run homework.
