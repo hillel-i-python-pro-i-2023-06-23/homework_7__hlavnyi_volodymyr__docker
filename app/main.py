@@ -72,8 +72,8 @@ def get_formatted_output(data) -> str:
     """
     prepared_string = ""
     for group in data:
-        prepared_string = prepared_string + f"The group '{group}' has {len(data[group])} items -> ("
-        prepared_string = prepared_string + ", ".join(data[group]) + ")" + "\n"
+        prepared_string += f"The group '{group}' has {len(data[group])} items -> ("
+        prepared_string += ", ".join(data[group]) + ")" + "\n"
 
     return prepared_string
 
