@@ -2,8 +2,6 @@
 
 ---
 ![Main workflow](https://github.com/hillel-i-python-pro-i-2023-06-23/homework_7__hlavnyi_volodymyr__docker/actions/workflows/main-workflow.yml/badge.svg)
-
-
 ## 🏠 Homework
 
 Homework related actions.
