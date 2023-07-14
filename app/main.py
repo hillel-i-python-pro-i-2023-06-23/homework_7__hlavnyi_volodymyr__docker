@@ -7,7 +7,6 @@ from faker import Faker
 T_GROUP_NAME: TypeAlias = str
 T_GROUP_NAMES: TypeAlias = list[T_GROUP_NAME]
 
-
 class Human(TypedDict):
     name: str
     group: T_GROUP_NAME
@@ -54,10 +53,7 @@ class DataProvider:
 
 
 def organize_data(humans: T_HUMANS):
-    """
-    Organize data in way, useful for further processing.
-    At this stage not allowed to make output string.
-    """
+
     group_sorted = {}
 
     for human in humans:
@@ -67,30 +63,26 @@ def organize_data(humans: T_HUMANS):
 
 
 def get_formatted_output(data) -> str:
-    """
-    Get output string. That can be used to print in console.
-    """
-    prepared_string = ""
-    for group in data:
-        prepared_string += f"The group '{group}' has {len(data[group])} items -> ("
-        prepared_string += ", ".join(data[group]) + ")" + "\n"
 
-    return prepared_string
+    string_for_contencat = []
+    for group in data:
+        string_for_contencat.append("The group '")
+        string_for_contencat.append(f"{group}' ")
+        string_for_contencat.append("has ")
+        string_for_contencat.append(f"{len(data[group])}")
+        string_for_contencat.append("items -> (")
+        string_for_contencat.append(", ".join(data[group]))
+        string_for_contencat.append(")\n")
+
+    return ''.join(string_for_contencat)
 
 
 def main():
-    """
-    You have a list of humans. Every human have "name" and "group".
-    Your task is to show all groups, with amount and names of members of each group.
-    """
+
     group_members = DataProvider().generate_group_members()
 
-    # Функция "organize_data" принимает данные и возвращает структуру,
-    # подходящую для использования в дальнейшем для вывода.
     organized_data = organize_data(humans=group_members)
 
-    # Функция "get_formatted_output" принимает структуру из предыдущей функции
-    # и возращает строку, которую можно вывести в консоль.
     output = get_formatted_output(data=organized_data)
 
     print(output)
